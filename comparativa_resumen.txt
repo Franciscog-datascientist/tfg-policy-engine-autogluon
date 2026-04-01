@@ -1,0 +1,353 @@
+COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=COMPARATIVA POLICY ENGINE vs BASELINE
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Baseline A: medium_quality, 300s, sin configuración inteligente
+Baseline B: medium_quality, mismo tiempo que policy engine
+Policy:     configuración automática del motor de decisión
+=
+Titanic (balanced_accuracy)
+  Policy Engine : 78.94%
+  Baseline A    : 79.42%  (delta vs policy: -0.48pp)
+  Baseline B    : 79.42%  (delta vs policy: -0.48pp)
+
+IBM HR Attrition (f1)
+  Policy Engine : 44.44%
+  Baseline A    : 17.39%  (delta vs policy: +27.05pp)
+  Baseline B    : 17.39%  (delta vs policy: +27.05pp)
+
+Credit Card Fraud (f1)
+  Policy Engine : 89.27%
+  Baseline A    : 83.98%  (delta vs policy: +5.29pp)
+  Baseline B    : 83.98%  (delta vs policy: +5.29pp)
+
+Loan Approval (f1)
+  Policy Engine : 88.01%
+  Baseline A    : 87.78%  (delta vs policy: +0.23pp)
+  Baseline B    : 87.78%  (delta vs policy: +0.23pp)
+
+Video Game Sales (root_mean_squared_error)
+  Policy Engine : 0.5259
+  Baseline A    : 0.5373  (delta vs policy: +1.14pp mejor)
+  Baseline B    : 0.5373  (delta vs policy: +1.14pp mejor)
+
+=================================================================
+Resultados completos en comparativa_resultados.csv
