@@ -1,0 +1,1737 @@
+[
+  {
+    "run_id": "2026-03-31T20:46:37.851831",
+    "timestamp": "2026-03-31T20:46:37.851831",
+    "dataset_meta": {
+      "n_rows": 8000,
+      "n_cols": 13,
+      "missing_ratio": 0.0049,
+      "num_numeric_features": 11,
+      "num_categorical_features": 2
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.6101,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 12
+    },
+    "user_goals": {
+      "label": "approved",
+      "priority": "speed",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T20:46:37.851831",
+      "predictor_init": {
+        "label": "approved",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona medium_quality (prioridad = velocidad, presupuesto temporal = low).",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2",
+      "score": 0.9287804878048781,
+      "eval_metric": "f1",
+      "training_time": 44.08,
+      "leaderboard_top5": [
+        {
+          "model": "WeightedEnsemble_L2",
+          "score_val": 0.9323308270676691,
+          "score_test": 0.9287804878048781
+        },
+        {
+          "model": "CatBoost",
+          "score_val": 0.9179487179487179,
+          "score_test": 0.9287128712871288
+        },
+        {
+          "model": "NeuralNetTorch",
+          "score_val": 0.9308176100628931,
+          "score_test": 0.9251101321585903
+        },
+        {
+          "model": "RandomForestEntr",
+          "score_val": 0.9183673469387755,
+          "score_test": 0.9250493096646942
+        },
+        {
+          "model": "RandomForestGini",
+          "score_val": 0.9142125480153649,
+          "score_test": 0.9225456339417859
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-03-31T21:12:25.584212",
+    "timestamp": "2026-03-31T21:12:25.584212",
+    "dataset_meta": {
+      "n_rows": 284807,
+      "n_cols": 31,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 31,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 577.876,
+      "imbalance_level": "moderate_severe_imbalance",
+      "n_predictive_cols": 30
+    },
+    "user_goals": {
+      "label": "Class",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T21:12:25.584212",
+      "predictor_init": {
+        "label": "Class",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L3_FULL",
+      "score": 0.900990099009901,
+      "eval_metric": "f1",
+      "training_time": 2188.94,
+      "leaderboard_top5": [
+        {
+          "model": "CatBoost_r177_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.900990099009901
+        },
+        {
+          "model": "RandomForestGini_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.900990099009901
+        },
+        {
+          "model": "WeightedEnsemble_L3_FULL",
+          "score_val": null,
+          "score_test": 0.900990099009901
+        },
+        {
+          "model": "RandomForestEntr_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.9
+        },
+        {
+          "model": "CatBoost_r177_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.898989898989899
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-03-31T22:05:21.129092",
+    "timestamp": "2026-03-31T22:05:21.129092",
+    "dataset_meta": {
+      "n_rows": 1470,
+      "n_cols": 35,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 26,
+      "num_categorical_features": 9
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 5.2025,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 34
+    },
+    "user_goals": {
+      "label": "Attrition",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T22:05:21.129092",
+      "predictor_init": {
+        "label": "Attrition",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L3_FULL",
+      "score": 0.4878048780487805,
+      "eval_metric": "f1",
+      "training_time": 1957.49,
+      "leaderboard_top5": [
+        {
+          "model": "NeuralNetTorch_r22_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.6041666666666666
+        },
+        {
+          "model": "NeuralNetFastAI_r143_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5742574257425742
+        },
+        {
+          "model": "NeuralNetFastAI_r191_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5576923076923077
+        },
+        {
+          "model": "NeuralNetTorch_r22_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5544554455445545
+        },
+        {
+          "model": "NeuralNetFastAI_r156_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5454545454545454
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-03-31T23:05:05.929722",
+    "timestamp": "2026-03-31T23:05:05.929722",
+    "dataset_meta": {
+      "n_rows": 712,
+      "n_cols": 12,
+      "missing_ratio": 0.0813,
+      "num_numeric_features": 7,
+      "num_categorical_features": 5
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.6567,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 11
+    },
+    "user_goals": {
+      "label": "Survived",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T23:05:05.929722",
+      "predictor_init": {
+        "label": "Survived",
+        "problem_type": "binary",
+        "eval_metric": "balanced_accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona balanced_accuracy por desbalanceo de clases (imbalance_ratio = 1.6567 > 1.5).",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = balanced_accuracy)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-03-31T23:05:56.070136",
+    "timestamp": "2026-03-31T23:05:56.070136",
+    "dataset_meta": {
+      "n_rows": 1176,
+      "n_cols": 35,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 26,
+      "num_categorical_features": 9
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 4.9394,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 34
+    },
+    "user_goals": {
+      "label": "Attrition",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T23:05:56.070136",
+      "predictor_init": {
+        "label": "Attrition",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-03-31T23:38:30.795211",
+    "timestamp": "2026-03-31T23:38:30.795211",
+    "dataset_meta": {
+      "n_rows": 227845,
+      "n_cols": 31,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 31,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 577.2868,
+      "imbalance_level": "moderate_severe_imbalance",
+      "n_predictive_cols": 30
+    },
+    "user_goals": {
+      "label": "Class",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-03-31T23:38:30.795211",
+      "predictor_init": {
+        "label": "Class",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T00:20:14.126338",
+    "timestamp": "2026-04-01T00:20:14.126338",
+    "dataset_meta": {
+      "n_rows": 6400,
+      "n_cols": 13,
+      "missing_ratio": 0.0048,
+      "num_numeric_features": 11,
+      "num_categorical_features": 2
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.6154,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 12
+    },
+    "user_goals": {
+      "label": "approved",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T00:20:14.126338",
+      "predictor_init": {
+        "label": "approved",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T00:27:51.830376",
+    "timestamp": "2026-04-01T00:27:51.830376",
+    "dataset_meta": {
+      "n_rows": 15065,
+      "n_cols": 8,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 5
+    },
+    "target_meta": {
+      "target_dtype": "numeric",
+      "target_n_unique": 445,
+      "imbalance_ratio": null,
+      "imbalance_level": null,
+      "n_predictive_cols": 7
+    },
+    "user_goals": {
+      "label": "total_sales",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T00:27:51.830376",
+      "predictor_init": {
+        "label": "total_sales",
+        "problem_type": "regression",
+        "eval_metric": "root_mean_squared_error"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Tipo de problema confirmado manualmente por el usuario: regression.",
+        "Se selecciona root_mean_squared_error como métrica por defecto para regresión.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T11:12:39.127360",
+    "timestamp": "2026-04-01T11:12:39.127360",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T11:12:39.127360",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T11:38:04.960364",
+    "timestamp": "2026-04-01T11:38:04.960364",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "performance",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T11:38:04.960364",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "high_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona high_quality (prioridad = rendimiento, presupuesto temporal = medio).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "NeuralNetTorch_r158_BAG_L1_FULL",
+      "score": 0.3697478991596639,
+      "eval_metric": "f1",
+      "training_time": 2087.2,
+      "leaderboard_top5": [
+        {
+          "model": "NeuralNetFastAI_r143_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6011396011396012
+        },
+        {
+          "model": "NeuralNetFastAI_r95_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.599713055954089
+        },
+        {
+          "model": "NeuralNetFastAI_r103_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5988023952095808
+        },
+        {
+          "model": "NeuralNetTorch_r79_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5986577181208054
+        },
+        {
+          "model": "NeuralNetFastAI_r191_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5960264900662252
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T13:10:43.304327",
+    "timestamp": "2026-04-01T13:10:43.304327",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T13:10:43.304327",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2_FULL",
+      "score": 0.5247524752475248,
+      "eval_metric": "f1",
+      "training_time": 250.92,
+      "leaderboard_top5": [
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.587183308494784
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5869565217391305
+        },
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5863095238095238
+        },
+        {
+          "model": "LightGBM_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5662100456621004
+        },
+        {
+          "model": "XGBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5635528330781011
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T13:24:25.406146",
+    "timestamp": "2026-04-01T13:24:25.406146",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T13:24:25.406146",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T13:26:57.411755",
+    "timestamp": "2026-04-01T13:26:57.411755",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T13:26:57.411755",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L3_FULL",
+      "score": 0.5835694050991501,
+      "eval_metric": "f1",
+      "training_time": 337.63,
+      "leaderboard_top5": [
+        {
+          "model": "NeuralNetFastAI_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.5934959349593496
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5907692307692308
+        },
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5873715124816447
+        },
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5856515373352855
+        },
+        {
+          "model": "WeightedEnsemble_L3_FULL",
+          "score_val": null,
+          "score_test": 0.5835694050991501
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T13:44:38.701447",
+    "timestamp": "2026-04-01T13:44:38.701447",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "speed",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T13:44:38.701447",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona medium_quality (prioridad = velocidad, presupuesto temporal = low).",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2",
+      "score": 0.6153846153846154,
+      "eval_metric": "f1",
+      "training_time": 70.89,
+      "leaderboard_top5": [
+        {
+          "model": "WeightedEnsemble_L2",
+          "score_val": 0.6333333333333333,
+          "score_test": 0.6153846153846154
+        },
+        {
+          "model": "NeuralNetTorch",
+          "score_val": 0.6013071895424836,
+          "score_test": 0.6020942408376964
+        },
+        {
+          "model": "CatBoost",
+          "score_val": 0.5703971119133574,
+          "score_test": 0.5857988165680473
+        },
+        {
+          "model": "NeuralNetFastAI",
+          "score_val": 0.6220735785953178,
+          "score_test": 0.5825242718446602
+        },
+        {
+          "model": "XGBoost",
+          "score_val": 0.5977859778597786,
+          "score_test": 0.5804511278195489
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T13:52:01.316936",
+    "timestamp": "2026-04-01T13:52:01.316936",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "speed",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T13:52:01.316936",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona medium_quality (prioridad = velocidad, presupuesto temporal = low).",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2",
+      "score": 0.6153846153846154,
+      "eval_metric": "f1",
+      "training_time": 66.59,
+      "leaderboard_top5": [
+        {
+          "model": "WeightedEnsemble_L2",
+          "score_val": 0.6333333333333333,
+          "score_test": 0.6153846153846154
+        },
+        {
+          "model": "NeuralNetTorch",
+          "score_val": 0.6013071895424836,
+          "score_test": 0.6020942408376964
+        },
+        {
+          "model": "CatBoost",
+          "score_val": 0.5703971119133574,
+          "score_test": 0.5857988165680473
+        },
+        {
+          "model": "NeuralNetFastAI",
+          "score_val": 0.6220735785953178,
+          "score_test": 0.5825242718446602
+        },
+        {
+          "model": "XGBoost",
+          "score_val": 0.5977859778597786,
+          "score_test": 0.5804511278195489
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T14:03:01.726425",
+    "timestamp": "2026-04-01T14:03:01.726425",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T14:03:01.726425",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L3_FULL",
+      "score": 0.5867052023121387,
+      "eval_metric": "f1",
+      "training_time": 333.9,
+      "leaderboard_top5": [
+        {
+          "model": "NeuralNetFastAI_BAG_L2_FULL",
+          "score_val": null,
+          "score_test": 0.5931972789115646
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5895061728395061
+        },
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5873715124816447
+        },
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.5873715124816447
+        },
+        {
+          "model": "WeightedEnsemble_L3_FULL",
+          "score_val": null,
+          "score_test": 0.5867052023121387
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T14:26:27.039498",
+    "timestamp": "2026-04-01T14:26:27.039498",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T14:26:27.039498",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2_FULL",
+      "score": 0.6041958041958042,
+      "eval_metric": "f1",
+      "training_time": 207.14,
+      "leaderboard_top5": [
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6221009549795361
+        },
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6197564276048715
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6100278551532033
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1",
+          "score_val": 0.5581743359521137,
+          "score_test": 0.6048387096774194
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6048387096774194
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T14:37:49.522902",
+    "timestamp": "2026-04-01T14:37:49.522902",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T14:37:49.522902",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2_FULL",
+      "score": 0.6041958041958042,
+      "eval_metric": "f1",
+      "training_time": 204.57,
+      "leaderboard_top5": [
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6221009549795361
+        },
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6197564276048715
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6100278551532033
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1",
+          "score_val": 0.5581743359521137,
+          "score_test": 0.6048387096774194
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6048387096774194
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T14:47:27.807979",
+    "timestamp": "2026-04-01T14:47:27.807979",
+    "dataset_meta": {
+      "n_rows": 7043,
+      "n_cols": 21,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 18
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 2,
+      "imbalance_ratio": 2.7683,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 20
+    },
+    "user_goals": {
+      "label": "Churn",
+      "priority": "balanced",
+      "time_budget_level": "low",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T14:47:27.807979",
+      "predictor_init": {
+        "label": "Churn",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2_FULL",
+      "score": 0.6041958041958042,
+      "eval_metric": "f1",
+      "training_time": 207.24,
+      "leaderboard_top5": [
+        {
+          "model": "CatBoost_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6221009549795361
+        },
+        {
+          "model": "LightGBMXT_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6197564276048715
+        },
+        {
+          "model": "NeuralNetTorch_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6100278551532033
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1",
+          "score_val": 0.5581743359521137,
+          "score_test": 0.6048387096774194
+        },
+        {
+          "model": "RandomForestEntr_BAG_L1_FULL",
+          "score_val": null,
+          "score_test": 0.6048387096774194
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-04-01T19:10:04.790112",
+    "timestamp": "2026-04-01T19:10:04.790112",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:04.790112",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:04.874640",
+    "timestamp": "2026-04-01T19:10:04.874640",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 5.6667,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:04.874640",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:04.883641",
+    "timestamp": "2026-04-01T19:10:04.883641",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 2,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 2,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "numeric",
+      "target_n_unique": 200,
+      "imbalance_ratio": null,
+      "imbalance_level": null,
+      "n_predictive_cols": 1
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:04.883641",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "regression",
+        "eval_metric": "root_mean_squared_error"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta regresión (target_dtype = numeric, target_n_unique / n_rows = 1.0 > 0.05). Heurística inspirada en AutoGluon (Erickson et al., 2020).",
+        "Se selecciona root_mean_squared_error como métrica por defecto para regresión.",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:04.892640",
+    "timestamp": "2026-04-01T19:10:04.892640",
+    "dataset_meta": {
+      "n_rows": 100,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:04.892640",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:54.294494",
+    "timestamp": "2026-04-01T19:10:54.294494",
+    "dataset_meta": {
+      "n_rows": 2000,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:54.294494",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:54.306506",
+    "timestamp": "2026-04-01T19:10:54.306506",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 5.6667,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:54.306506",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:54.316586",
+    "timestamp": "2026-04-01T19:10:54.316586",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 2,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 2,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "numeric",
+      "target_n_unique": 200,
+      "imbalance_ratio": null,
+      "imbalance_level": null,
+      "n_predictive_cols": 1
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:54.316586",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "regression",
+        "eval_metric": "root_mean_squared_error"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta regresión (target_dtype = numeric, target_n_unique / n_rows = 1.0 > 0.05). Heurística inspirada en AutoGluon (Erickson et al., 2020).",
+        "Se selecciona root_mean_squared_error como métrica por defecto para regresión.",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T19:10:54.327652",
+    "timestamp": "2026-04-01T19:10:54.327652",
+    "dataset_meta": {
+      "n_rows": 100,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T19:10:54.327652",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2024).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
+  }
+]
