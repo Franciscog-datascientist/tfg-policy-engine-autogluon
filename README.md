@@ -17,3 +17,7 @@ pip install -r requirements.txt
 ```
 py -3.11 -m streamlit run app.py
 ```
+## Nota sobre Ollama
+
+La interfaz principal puede ejecutarse con el comando anterior.
+Si se quiere utilizar la generación de informes con modelo local, es necesario tener Ollama instalado y activo en el entorno local.
