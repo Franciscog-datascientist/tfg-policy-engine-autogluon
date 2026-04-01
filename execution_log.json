@@ -1733,5 +1733,87 @@
       ]
     },
     "training_results": null
+  },
+  {
+    "run_id": "2026-04-01T21:10:30.315112",
+    "timestamp": "2026-04-01T21:10:30.315112",
+    "dataset_meta": {
+      "n_rows": 8000,
+      "n_cols": 13,
+      "missing_ratio": 0.0049,
+      "num_numeric_features": 11,
+      "num_categorical_features": 2
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.6101,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 12
+    },
+    "user_goals": {
+      "label": "approved",
+      "priority": "speed",
+      "time_budget_level": "low",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-04-01T21:10:30.315112",
+      "predictor_init": {
+        "label": "approved",
+        "problem_type": "binary",
+        "eval_metric": "balanced_accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 300
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona balanced_accuracy por desbalanceo de clases (imbalance_ratio = 1.6101 > 1.5).",
+        "Se selecciona medium_quality (prioridad = velocidad, presupuesto temporal = low).",
+        "Se fija time_limit = 300s por selección de presupuesto temporal low.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = balanced_accuracy)."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2",
+      "score": 0.9072415764095499,
+      "eval_metric": "balanced_accuracy",
+      "training_time": 83.95,
+      "leaderboard_top5": [
+        {
+          "model": "WeightedEnsemble_L2",
+          "score_val": 0.9251795876481015,
+          "score_test": 0.9072415764095499
+        },
+        {
+          "model": "LightGBMXT",
+          "score_val": 0.9226606959604441,
+          "score_test": 0.9069834662966817
+        },
+        {
+          "model": "LightGBM",
+          "score_val": 0.9176229125851292,
+          "score_test": 0.9022845594785036
+        },
+        {
+          "model": "CatBoost",
+          "score_val": 0.9127095189227851,
+          "score_test": 0.8996831026626867
+        },
+        {
+          "model": "NeuralNetTorch",
+          "score_val": 0.9089311813912989,
+          "score_test": 0.898638448798933
+        }
+      ]
+    }
   }
 ]
