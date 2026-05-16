@@ -37,7 +37,7 @@ def analyze_dataset(source: pd.DataFrame | str) -> dict:
         Si el dataset está vacío.
     """
  
-    # --- Carga ---
+    # Carga
     if isinstance(source, pd.DataFrame):
         df = source.copy()
     elif isinstance(source, str):
@@ -47,11 +47,11 @@ def analyze_dataset(source: pd.DataFrame | str) -> dict:
             f"Se esperaba un DataFrame o una ruta (str), se recibió {type(source).__name__}."
         )
  
-    # --- Validación básica ---
+    # Validación básica
     if df.empty:
         raise ValueError("El dataset está vacío.")
  
-    # --- Cálculos ---
+    # Cálculos
     n_rows, n_cols = df.shape
     total_cells = n_rows * n_cols
     missing_cells = df.isnull().sum().sum()
@@ -73,7 +73,7 @@ def analyze_dataset(source: pd.DataFrame | str) -> dict:
     return dataset_meta
  
  
-# --- Uso de ejemplo ---
+# Uso de ejemplo
 if __name__ == "__main__":
     # Ejemplo con DataFrame sintético
     import numpy as np

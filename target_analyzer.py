@@ -149,10 +149,7 @@ def analyze_target(df: pd.DataFrame, label: str) -> dict:
         "n_predictive_cols": n_predictive_cols,
     }
  
- 
-# ---------------------------------------------------------------------------
 # Ejecución directa para pruebas rápidas
-# ---------------------------------------------------------------------------
 if __name__ == "__main__":
     import sys
  

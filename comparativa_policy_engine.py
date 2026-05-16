@@ -50,10 +50,7 @@ from policy_engine import run as policy_engine_run
 
 warnings.filterwarnings("ignore")
 
-
-# =============================================================================
 # CONFIGURACIÓN DE DATASETS
-# =============================================================================
 
 DATASETS = [
     {
@@ -132,10 +129,7 @@ DATASETS = [
 BASELINE_PRESET    = "medium_quality"
 BASELINE_TIME_A    = 300   # 5 minutos — usuario sin experiencia
 
-
-# =============================================================================
-# FUNCIONES AUXILIARES
-# =============================================================================
+# FUNCIONES AUXILIARES 
 
 def evaluate_manual(y_true, y_pred, metric: str) -> float | None:
     """Calcula la métrica indicada sobre predicciones ya generadas."""
@@ -214,10 +208,7 @@ def _fmt(value, metric: str) -> str:
         return f"{value:.4f}"
     return f"{value * 100:.2f}%"
 
-
-# =============================================================================
 # MAIN
-# =============================================================================
 
 def main():
     all_results  = []
@@ -234,7 +225,7 @@ def main():
         print(f"  {entry['description']}")
         print(sep)
 
-        # --- Cargar dataset ---
+        # Cargar dataset
         try:
             df = pd.read_csv(entry["csv_path"])
             print(f"  Filas: {len(df):,} | Columnas: {df.shape[1]}")
@@ -246,9 +237,7 @@ def main():
         train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
         print(f"  Train: {len(train_df):,} | Test: {len(test_df):,}")
 
-        # =================================================================
         # PASO 1 — Policy engine
-        # =================================================================
         print(f"\n  [POLICY ENGINE] Analizando dataset y generando configuración…")
         print(f"  Respuestas del usuario: {entry['user_answers']}")
 
@@ -287,9 +276,7 @@ def main():
             import traceback; traceback.print_exc()
             continue
 
-        # =================================================================
         # PASO 2 — Entrenamiento: Policy Engine
-        # =================================================================
         print(f"\n  [POLICY ENGINE] Entrenando…  ({preset_pe_str} | {time_lim_pe}s | {m_policy})")
         try:
             pe_res = train_autogluon(
@@ -316,9 +303,7 @@ def main():
             pe_score_baseline = pe_score_policy = None
             y_true = test_df[label]
 
-        # =================================================================
         # PASO 3 — Entrenamiento: Baseline A (300s, usuario sin experiencia)
-        # =================================================================
         print(f"\n  [BASELINE A]    Entrenando…  ({BASELINE_PRESET} | {BASELINE_TIME_A}s | {m_baseline})")
         try:
             bl_a_res = train_autogluon(
@@ -342,11 +327,9 @@ def main():
             bl_a_res = {"training_time_s": None}
             bla_score_baseline = bla_score_policy = None
 
-        # =================================================================
         # PASO 4 — Entrenamiento: Baseline B (mismo tiempo que policy engine)
         # Aísla el efecto de la configuración inteligente eliminando
         # la ventaja de tiempo que puede tener el policy engine.
-        # =================================================================
         print(f"\n  [BASELINE B]    Entrenando…  ({BASELINE_PRESET} | {time_lim_pe}s | {m_baseline})")
         try:
             bl_b_res = train_autogluon(
@@ -370,7 +353,7 @@ def main():
             bl_b_res = {"training_time_s": None}
             blb_score_baseline = blb_score_policy = None
 
-        # --- Registrar resultados ---
+        # Registrar resultados
         all_results.append({
             "Dataset":                    name,
             "Descripcion":                entry["description"],
@@ -415,9 +398,7 @@ def main():
             f"(delta vs policy: {_delta(pe_score_policy, blb_score_policy)})"
         )
 
-    # =============================================================================
     # GUARDAR RESULTADOS
-    # =============================================================================
     if not all_results:
         print("\n⚠ No se completó ningún dataset. Revisa las rutas de los CSV.")
         return

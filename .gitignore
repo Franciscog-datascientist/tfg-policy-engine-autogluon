@@ -1,0 +1,9 @@
+﻿# Python
+__pycache__/
+
+# Pytest
+.pytest_cache/
+
+# AutoGluon — modelos entrenados (se regeneran)
+AutogluonModels/
+ag_*/

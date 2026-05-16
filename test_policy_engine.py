@@ -34,10 +34,7 @@ from policy_engine import (
     run,
 )
 
-
-# ---------------------------------------------------------------------------
 # Helpers
-# ---------------------------------------------------------------------------
 
 def _target_meta(dtype="categorical", n_unique=2, imbalance_ratio=1.0):
     return {
@@ -78,10 +75,7 @@ def _make_multiclass_df(n=300):
         "target": classes[:n],
     })
 
-
-# ---------------------------------------------------------------------------
 # 1. problem_type (7 tests)
-# ---------------------------------------------------------------------------
 
 class TestDecideProblemType:
 
@@ -133,10 +127,7 @@ class TestDecideProblemType:
         )
         assert result == "multiclass"
 
-
-# ---------------------------------------------------------------------------
 # 2. eval_metric (8 tests)
-# ---------------------------------------------------------------------------
 
 class TestDecideEvalMetric:
 
@@ -191,10 +182,7 @@ class TestDecideEvalMetric:
         result = _decide_eval_metric("regression", meta, "no", notes)
         assert result == "root_mean_squared_error"
 
-
-# ---------------------------------------------------------------------------
 # 3. presets (9 tests)
-# ---------------------------------------------------------------------------
 
 class TestDecidePresets:
 
@@ -244,10 +232,7 @@ class TestDecidePresets:
         result = _decide_presets("balanced", "medium", "yes", 5000, notes)
         assert "optimize_for_deployment" in result
 
-
-# ---------------------------------------------------------------------------
 # 4. time_limit (3 tests)
-# ---------------------------------------------------------------------------
 
 class TestDecideTimeLimit:
 
@@ -263,10 +248,7 @@ class TestDecideTimeLimit:
         notes = []
         assert _decide_time_limit("high", notes) == 7200
 
-
-# ---------------------------------------------------------------------------
 # 5. calibrate_decision_threshold (4 tests)
-# ---------------------------------------------------------------------------
 
 class TestDecideCalibrateThreshold:
 
@@ -286,10 +268,7 @@ class TestDecideCalibrateThreshold:
         notes = []
         assert _decide_calibrate_threshold("multiclass", "f1_macro", notes) is False
 
-
-# ---------------------------------------------------------------------------
 # 6. validación de entradas (4 tests)
-# ---------------------------------------------------------------------------
 
 class TestValidateUserGoals:
 
@@ -323,10 +302,7 @@ class TestValidateUserGoals:
         with pytest.raises(ValueError, match="deployment_needed"):
             _validate_user_goals(goals)
 
-
-# ---------------------------------------------------------------------------
 # 7. integración end-to-end (4 tests)
-# ---------------------------------------------------------------------------
 
 class TestRunIntegration:
 

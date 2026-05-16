@@ -28,7 +28,7 @@ Mecanismo de memoria (V1):
 Referencias:
     - He & Garcia (2009) para umbrales de desbalanceo
     - Erickson et al. (2020) para heurística de problem_type
-    - Hollmann et al. (2024) para límite de dataset pequeño
+    - Hollmann et al. (2025) para límite de dataset pequeño
     - Documentación de AutoGluon (2024) para presets y calibrate_decision_threshold
 """
 
@@ -41,7 +41,7 @@ from dataset_analyzer import analyze_dataset
 from target_analyzer import analyze_target
 
 
-## Excepción para caso ambiguo de problem_type
+# Excepción para caso ambiguo de problem_type
 
 class AmbiguousProblemTypeError(Exception):
     """
@@ -57,7 +57,7 @@ class AmbiguousProblemTypeError(Exception):
     pass
 
 
-## Validación de entradas del usuario
+# Validación de entradas del usuario
 
 _VALID_PRIORITIES = {"performance", "balanced", "speed"}
 _VALID_TIME_BUDGETS = {"low", "medium", "high"}
@@ -336,7 +336,7 @@ def _decide_presets(
             "Dataset pequeño detectado (n_rows < 1000). Se limita el "
             "preset a medium_quality para reducir el riesgo de "
             "sobreajuste, siguiendo las recomendaciones de "
-            "Hollmann et al. (2024)."
+            "Hollmann et al. (2025)."
         )
 
     # Construir lista de presets 
@@ -817,7 +817,7 @@ if __name__ == "__main__":
     updated = update_execution_log_with_results(config["run_id"], fake_results)
     print(f"\nResultados guardados en el log: {updated}")
 
-    # --- Consultar runs similares ---
+    # Consultar runs similares
     similar = query_similar_runs(
         problem_type=config["predictor_init"]["problem_type"],
         n_rows=5,

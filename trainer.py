@@ -68,7 +68,7 @@ def train(
          extra_metrics, model_path y predictor.
     """
 
-    # --- Extraer configuración ---
+    # Extraer configuración
     label        = config["predictor_init"]["label"]
     problem_type = config["predictor_init"]["problem_type"]
     eval_metric  = config["predictor_init"]["eval_metric"]
@@ -76,7 +76,7 @@ def train(
     time_limit   = config["fit_args"]["time_limit"]
     calibrate    = config["post_fit"]["calibrate_decision_threshold"]
 
-    # --- Dividir en train/test ---
+    # Dividir en train/test
     df_shuffled = df.sample(frac=1, random_state=random_seed).reset_index(drop=True)
     split_idx   = int(len(df_shuffled) * (1 - test_size))
     train_data  = df_shuffled.iloc[:split_idx]
@@ -87,7 +87,7 @@ def train(
     print(f"Presets: {presets} | Time limit: {time_limit}s")
     print("=" * 60)
 
-    # --- Crear predictor ---
+    # Crear predictor
     predictor = TabularPredictor(
         label=label,
         problem_type=problem_type,
@@ -95,7 +95,7 @@ def train(
         path=save_path,
     )
 
-    # --- Entrenar ---
+    # Entrenar
     start_time = time.time()
     predictor.fit(
         train_data=train_data,
@@ -104,16 +104,16 @@ def train(
     )
     training_time = round(time.time() - start_time, 2)
 
-    # --- Calibrar umbral si corresponde ---
+    # Calibrar umbral si corresponde
     if calibrate:
         print("\nCalibrando umbral de decisión...")
         predictor.calibrate_decision_threshold()
 
-    # --- Obtener predicciones sobre test ---
+    # Obtener predicciones sobre test
     y_true = test_data[label]
     y_pred = predictor.predict(test_data)
 
-    # --- Calcular score principal ---
+    # Calcular score principal
     try:
         score_result = predictor.evaluate(test_data)
         if isinstance(score_result, dict):
@@ -134,7 +134,7 @@ def train(
         else:
             score = round(accuracy_score(y_true, y_pred), 4)
 
-    # --- Calcular métricas adicionales ---
+    # Calcular métricas adicionales
     # Para clasificación: accuracy, precision, recall, f1
     # Para regresión: MAE, R²
     extra_metrics = {}
@@ -170,7 +170,7 @@ def train(
     leaderboard = predictor.leaderboard(test_data, silent=True, extra_info=True)
     best_model  = predictor.model_best
 
-    # --- Mostrar resultados ---
+    # Mostrar resultados
     print("\n" + "=" * 60)
     print("RESULTADOS DEL ENTRENAMIENTO")
     print("=" * 60)
@@ -192,10 +192,7 @@ def train(
         "predictor":      predictor,
     }
 
-
-# ============================================================================
 # Ejecución directa para prueba rápida
-# ============================================================================
 if __name__ == "__main__":
     from policy_engine import run
 

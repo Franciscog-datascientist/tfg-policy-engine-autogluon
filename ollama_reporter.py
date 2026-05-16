@@ -38,7 +38,7 @@ def generate_report(
     str — informe en texto plano en español
     """
 
-    # --- Extraer información relevante ---
+    # Extraer información relevante
     n_rows       = dataset_meta["n_rows"]
     n_cols       = dataset_meta["n_cols"]
     missing      = dataset_meta["missing_ratio"] * 100
@@ -86,7 +86,7 @@ def generate_report(
 
     notes_text = "\n".join(f"- {n}" for n in notes)
 
-    # --- Construir el prompt ---
+    # Construir el prompt
     prompt = f"""Eres un asistente de ciencia de datos que genera informes claros y profesionales en español.
 Escribe un informe conciso (máximo 250 palabras) explicando los resultados de un proceso de entrenamiento automático de modelos de machine learning.
 Usa un lenguaje claro, sin tecnicismos innecesarios. No uses listas de puntos, escribe en prosa.
@@ -115,7 +115,7 @@ RESULTADOS:
 
 Escribe el informe ahora, en español, en prosa, sin títulos ni listas:"""
 
-    # --- Llamar a Ollama ---
+    # Llamar a Ollama
     try:
         response = requests.post(
             OLLAMA_URL,
@@ -131,14 +131,14 @@ Escribe el informe ahora, en español, en prosa, sin títulos ni listas:"""
 
     except requests.exceptions.ConnectionError:
         return (
-            "⚠️ No se pudo conectar con Ollama. "
+            " No se pudo conectar con Ollama. "
             "Asegúrate de que Ollama está en ejecución (`ollama serve`) "
             "e inténtalo de nuevo."
         )
     except requests.exceptions.Timeout:
         return (
-            "⚠️ El modelo tardó demasiado en responder. "
+            " El modelo tardó demasiado en responder. "
             "Inténtalo de nuevo o usa un modelo más ligero."
         )
     except Exception as e:
-        return f"⚠️ Error al generar el informe: {e}"
+        return f" Error al generar el informe: {e}"

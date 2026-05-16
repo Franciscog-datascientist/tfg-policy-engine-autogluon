@@ -32,8 +32,8 @@ import streamlit as st
 from policy_engine import (
     run,
     AmbiguousProblemTypeError,
-    update_execution_log_with_results,  # ← NUEVO: guardar resultados en el log
-    query_similar_runs,                 # ← NUEVO: consultar ejecuciones similares
+    update_execution_log_with_results,  # guardar resultados en el log
+    query_similar_runs,                 # consultar ejecuciones similares
 )
 from dataset_analyzer import analyze_dataset
 from target_analyzer import analyze_target
@@ -41,9 +41,7 @@ from trainer import train
 from ollama_reporter import generate_report
 
 
-# =============================================================================
 # Configuración general de la página
-# =============================================================================
 
 st.set_page_config(
     page_title="Policy Engine — AutoGluon",
@@ -274,10 +272,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-# =============================================================================
 # Inicialización de session_state
-# =============================================================================
 
 defaults = {
     "step": 0,
@@ -292,19 +287,16 @@ defaults = {
     "deployment_needed": None,
     "focus_minority_class": None,
     "config": None,
-    "run_id": None,                 # ← NUEVO: identificador único de la ejecución
+    "run_id": None,                 # identificador único de la ejecución
     "training_results": None,
-    "results_saved_to_log": False,  # ← NUEVO: flag para no guardar dos veces
+    "results_saved_to_log": False,  # flag para no guardar dos veces
 }
 
 for key, value in defaults.items():
     if key not in st.session_state:
         st.session_state[key] = value
 
-
-# =============================================================================
 # Helpers
-# =============================================================================
 
 def reset():
     """Reinicia toda la sesión para volver al paso 0."""
@@ -382,10 +374,7 @@ def _serialize_leaderboard(leaderboard: pd.DataFrame, top_k: int = 5) -> list[di
         records.append(entry)
     return records
 
-
-# =============================================================================
 # Cabecera
-# =============================================================================
 
 st.title("Policy Engine para AutoGluon")
 st.markdown(
@@ -394,10 +383,7 @@ st.markdown(
 )
 st.divider()
 
-
-# =============================================================================
 # PASO 0 — Subir el CSV
-# =============================================================================
 
 if st.session_state.step == 0:
 
@@ -425,10 +411,7 @@ if st.session_state.step == 0:
             except Exception as e:
                 st.error(f"Error al leer el archivo: {e}")
 
-
-# =============================================================================
 # PASO 1 — Mostrar resumen del dataset y elegir la columna objetivo
-# =============================================================================
 
 elif st.session_state.step == 1:
 
@@ -498,10 +481,7 @@ elif st.session_state.step == 1:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-
-# =============================================================================
 # PASO 2 — Mostrar análisis de la variable objetivo
-# =============================================================================
 
 elif st.session_state.step == 2:
 
@@ -583,10 +563,7 @@ elif st.session_state.step == 2:
             if st.button("Reiniciar", use_container_width=True):
                 reset()
 
-
-# =============================================================================
 # PASO 3 — Preguntas guiadas al usuario
-# =============================================================================
 
 elif st.session_state.step == 3:
 
@@ -605,9 +582,7 @@ elif st.session_state.step == 3:
     )
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Pregunta 1: priority
-    # -------------------------------------------------------------------------
     st.markdown("**¿Qué priorizas en el entrenamiento?**")
     priority = st.radio(
         label="Prioridad",
@@ -623,9 +598,7 @@ elif st.session_state.step == 3:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Pregunta 2: time_budget_level (dependiente de priority)
-    # -------------------------------------------------------------------------
     time_budget = None
 
     if priority is not None:
@@ -662,9 +635,7 @@ elif st.session_state.step == 3:
 
         st.divider()
 
-    # -------------------------------------------------------------------------
     # Pregunta 3: deployment_needed
-    # -------------------------------------------------------------------------
     st.markdown("**¿Vas a desplegar el modelo en producción?**")
     st.caption("Si es así, se favorecerán modelos más ligeros y rápidos en inferencia.")
     deployment = st.radio(
@@ -680,9 +651,7 @@ elif st.session_state.step == 3:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Pregunta 4: focus_minority_class (solo si clasificación con desbalanceo)
-    # -------------------------------------------------------------------------
     focus_minority = "no"
 
     if not is_regression:
@@ -726,9 +695,7 @@ elif st.session_state.step == 3:
                 f"No es necesario ajustar el enfoque hacia la clase minoritaria."
             )
 
-    # -------------------------------------------------------------------------
     # Validación y botón continuar
-    # -------------------------------------------------------------------------
     all_answered = all([
         priority is not None,
         time_budget is not None,
@@ -755,10 +722,7 @@ elif st.session_state.step == 3:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-
-# =============================================================================
 # PASO 4 — Ejecutar el policy engine y mostrar el resultado
-# =============================================================================
 
 elif st.session_state.step == 4:
 
@@ -776,7 +740,7 @@ elif st.session_state.step == 4:
                     confirmed_problem_type=st.session_state.confirmed_problem_type,
                 )
                 st.session_state.config = config
-                # ── NUEVO: guardar run_id en session_state ──────────────────
+                # guardar run_id en session_state
                 st.session_state.run_id = config.get("run_id")
 
             except AmbiguousProblemTypeError as e:
@@ -845,7 +809,7 @@ elif st.session_state.step == 4:
 
     st.divider()
 
-    # ── NUEVO: Ejecuciones similares del historial ────────────────────────────
+    # Ejecuciones similares del historial
     # Solo se muestra si hay al menos una ejecución previa completada similar.
     # Se consulta por problem_type y tamaño del dataset para no mezclar
     # contextos incomparables (ej. regresión con clasificación).
@@ -888,8 +852,6 @@ elif st.session_state.step == 4:
                     f"Tiempo: {run_entry['training_time']:.1f}s"
                 )
 
-    # ─────────────────────────────────────────────────────────────────────────
-
     col_train, col_reset = st.columns([3, 1])
 
     with col_train:
@@ -905,10 +867,7 @@ elif st.session_state.step == 4:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-
-# =============================================================================
 # PASO 5 — Entrenar con AutoGluon y mostrar resultados
-# =============================================================================
 
 elif st.session_state.step == 5:
 
@@ -939,7 +898,7 @@ elif st.session_state.step == 5:
                     "extra_metrics":  results.get("extra_metrics", {}),
                 }
 
-                # ── NUEVO: guardar resultados en execution_log.json ─────────
+                # guardar resultados en execution_log.json
                 # Construimos una versión serializable (sin DataFrame ni predictor)
                 # y la vinculamos a la ejecución actual usando el run_id.
                 if st.session_state.run_id is not None:
@@ -956,7 +915,6 @@ elif st.session_state.step == 5:
                         training_results=serializable_results,
                     )
                     st.session_state.results_saved_to_log = saved
-                # ─────────────────────────────────────────────────────────────
 
             except Exception as e:
                 st.error(
@@ -982,7 +940,7 @@ elif st.session_state.step == 5:
         "mean_absolute_error":     "Error absoluto medio (MAE)",
     }
 
-    # ── Pre-calcular el mejor modelo por media val+test ──────────────────────
+    # Pre-calcular el mejor modelo por media val+test 
     _lb_pre       = results["leaderboard"].copy()
     _has_test_pre = "score_test" in _lb_pre.columns
 
@@ -998,9 +956,7 @@ elif st.session_state.step == 5:
     score         = _best_pre_score
     display_score = abs(score)
 
-    # -------------------------------------------------------------------------
     # Cabecera de resultados
-    # -------------------------------------------------------------------------
     st.subheader("Paso 5 de 5 — Resultados del entrenamiento")
     st.success("El entrenamiento ha finalizado correctamente.")
 
@@ -1009,9 +965,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Métrica principal
-    # -------------------------------------------------------------------------
     st.markdown("### ¿Cómo de bueno es el modelo?")
 
     if eval_metric in ("accuracy", "balanced_accuracy", "f1", "f1_macro"):
@@ -1113,9 +1067,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Información del entrenamiento
-    # -------------------------------------------------------------------------
     st.markdown("### Detalles del entrenamiento")
 
     col1, col2 = st.columns(2)
@@ -1124,9 +1076,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Leaderboard
-    # -------------------------------------------------------------------------
     st.markdown("### Modelos probados (ranking)")
 
     leaderboard = results["leaderboard"].copy()
@@ -1138,7 +1088,7 @@ elif st.session_state.step == 5:
             return "—"
         return f"{abs(v) * 100:.2f}%" if is_classification else f"{abs(v):.4f}"
 
-    # ── Mejor modelo = mayor score_test (métrica honesta sobre datos nuevos) ─
+    # Mejor modelo = mayor score_test (métrica honesta sobre datos nuevos)
     has_test = "score_test" in leaderboard.columns
     has_val  = "score_val"  in leaderboard.columns
 
@@ -1173,7 +1123,7 @@ elif st.session_state.step == 5:
         "score de validación interna. Su score en test externo sigue siendo completamente válido."
     )
 
-    # ── Construir tabla ──────────────────────────────────────────────────────
+    # Construir tabla
     leaderboard["Modelo"] = leaderboard["model"].apply(_friendly_model_name)
 
     def _build_score_str(row):
@@ -1186,7 +1136,7 @@ elif st.session_state.step == 5:
         lambda x: "Mejor" if x == best_model_name else ""
     )
 
-    # ── Top 5 garantizando que el mejor aparece ──────────────────────────────
+    # Top 5 garantizando que el mejor aparece
     # Ordenar por score_test desc, luego score_val desc
     sort_cols = []
     if has_test: sort_cols.append("score_test")
@@ -1238,9 +1188,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Mensaje final orientativo
-    # -------------------------------------------------------------------------
     st.markdown("### ¿Qué puedo hacer ahora con este modelo?")
     st.info(
         "El modelo entrenado ha sido guardado automáticamente en la carpeta "
@@ -1251,9 +1199,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Descarga del modelo como .zip
-    # -------------------------------------------------------------------------
     st.markdown("### Descargar modelo entrenado")
     st.markdown(
         "Descarga el modelo entrenado para usarlo más adelante sin necesidad "
@@ -1294,9 +1240,7 @@ elif st.session_state.step == 5:
 
     st.divider()
 
-    # -------------------------------------------------------------------------
     # Informe Ollama
-    # -------------------------------------------------------------------------
     st.markdown("### Informe de resultados")
     with st.spinner("Generando informe de resultados…"):
         report = generate_report(

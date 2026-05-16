@@ -1815,5 +1815,287 @@
         }
       ]
     }
+  },
+  {
+    "run_id": "2026-05-16T15:14:42.848884",
+    "timestamp": "2026-05-16T15:14:42.848884",
+    "dataset_meta": {
+      "n_rows": 344,
+      "n_cols": 7,
+      "missing_ratio": 0.0075,
+      "num_numeric_features": 4,
+      "num_categorical_features": 3
+    },
+    "target_meta": {
+      "target_dtype": "categorical",
+      "target_n_unique": 3,
+      "imbalance_ratio": 2.2353,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 6
+    },
+    "user_goals": {
+      "label": "species",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-05-16T15:14:42.848884",
+      "predictor_init": {
+        "label": "species",
+        "problem_type": "multiclass",
+        "eval_metric": "f1_macro"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación multiclase (target_dtype = categorical, target_n_unique = 3).",
+        "Se selecciona f1_macro por desbalanceo de clases (imbalance_ratio = 2.2353 > 1.5).",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2025).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium."
+      ]
+    },
+    "training_results": {
+      "best_model": "WeightedEnsemble_L2",
+      "score": 0.984434509024673,
+      "eval_metric": "f1_macro",
+      "training_time": 62.99,
+      "leaderboard_top5": [
+        {
+          "model": "LightGBMLarge",
+          "score_val": 1.0,
+          "score_test": 0.984434509024673
+        },
+        {
+          "model": "LightGBM",
+          "score_val": 1.0,
+          "score_test": 0.984434509024673
+        },
+        {
+          "model": "NeuralNetTorch",
+          "score_val": 1.0,
+          "score_test": 0.984434509024673
+        },
+        {
+          "model": "WeightedEnsemble_L2",
+          "score_val": 1.0,
+          "score_test": 0.984434509024673
+        },
+        {
+          "model": "RandomForestGini",
+          "score_val": 0.9770347855454239,
+          "score_test": 0.984434509024673
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "2026-05-16T20:25:29.928814",
+    "timestamp": "2026-05-16T20:25:29.928814",
+    "dataset_meta": {
+      "n_rows": 2000,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-05-16T20:25:29.928814",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "good_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-05-16T20:25:29.938333",
+    "timestamp": "2026-05-16T20:25:29.938333",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 5.6667,
+      "imbalance_level": "slight_imbalance",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "balanced",
+      "time_budget_level": "medium",
+      "focus_minority_class": "yes",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-05-16T20:25:29.938333",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "f1"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 1800
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": true
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona f1 como métrica porque el usuario prioriza el rendimiento sobre la clase minoritaria.",
+        "Se selecciona good_quality por equilibrio entre rendimiento y coste.",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2025).",
+        "Se fija time_limit = 1800s por selección de presupuesto temporal medium.",
+        "Se activa calibrate_decision_threshold (problem_type = binary, eval_metric = f1)."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-05-16T20:25:29.951335",
+    "timestamp": "2026-05-16T20:25:29.951335",
+    "dataset_meta": {
+      "n_rows": 200,
+      "n_cols": 2,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 2,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "numeric",
+      "target_n_unique": 200,
+      "imbalance_ratio": null,
+      "imbalance_level": null,
+      "n_predictive_cols": 1
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-05-16T20:25:29.951335",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "regression",
+        "eval_metric": "root_mean_squared_error"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta regresión (target_dtype = numeric, target_n_unique / n_rows = 1.0 > 0.05). Heurística inspirada en AutoGluon (Erickson et al., 2020).",
+        "Se selecciona root_mean_squared_error como métrica por defecto para regresión.",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2025).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
+  },
+  {
+    "run_id": "2026-05-16T20:25:29.960326",
+    "timestamp": "2026-05-16T20:25:29.960326",
+    "dataset_meta": {
+      "n_rows": 100,
+      "n_cols": 3,
+      "missing_ratio": 0.0,
+      "num_numeric_features": 3,
+      "num_categorical_features": 0
+    },
+    "target_meta": {
+      "target_dtype": "boolean",
+      "target_n_unique": 2,
+      "imbalance_ratio": 1.0,
+      "imbalance_level": "balanced",
+      "n_predictive_cols": 2
+    },
+    "user_goals": {
+      "label": "target",
+      "priority": "performance",
+      "time_budget_level": "high",
+      "focus_minority_class": "no",
+      "deployment_needed": "no"
+    },
+    "config": {
+      "run_id": "2026-05-16T20:25:29.960326",
+      "predictor_init": {
+        "label": "target",
+        "problem_type": "binary",
+        "eval_metric": "accuracy"
+      },
+      "fit_args": {
+        "presets": [
+          "medium_quality"
+        ],
+        "time_limit": 7200
+      },
+      "post_fit": {
+        "calibrate_decision_threshold": false
+      },
+      "notes": [
+        "Se detecta clasificación binaria (target_n_unique = 2).",
+        "Se selecciona accuracy (dataset equilibrado, imbalance_ratio = 1.0).",
+        "Se selecciona best_quality (prioridad = rendimiento, presupuesto temporal = alto).",
+        "Dataset pequeño detectado (n_rows < 1000). Se limita el preset a medium_quality para reducir el riesgo de sobreajuste, siguiendo las recomendaciones de Hollmann et al. (2025).",
+        "Se fija time_limit = 7200s por selección de presupuesto temporal high."
+      ]
+    },
+    "training_results": null
   }
 ]
