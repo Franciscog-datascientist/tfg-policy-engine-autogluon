@@ -123,6 +123,20 @@ DATASETS = [
             "deployment_needed": "no",
         },
     },
+    {
+        "name": "Statlog Satellite",
+        "csv_path": "data/satellite.csv",
+        "label": "label",
+        "description": "Clasificación multiclase de superficies satelitales (6 clases, IR ≈ 2.4)",
+        "baseline_metric": "accuracy",
+        "confirmed_problem_type": "multiclass",
+        "user_answers": {
+            "priority": "performance",
+            "time_budget_level": "medium",
+            "focus_minority_class": "yes",
+            "deployment_needed": "no",
+        },
+    },
 ]
 
 # Configuración del baseline A (usuario sin experiencia)
