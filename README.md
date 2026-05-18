@@ -1,6 +1,6 @@
 # TFG Policy Engine AutoGluon
 
-Este repositorio contiene el código del prototipo desarrollado para el Trabajo Fin de Grado, centrado en un motor de decisión para configurar AutoGluon de forma automática mediante una interfaz en Streamlit.
+Este repositorio contiene el código del prototipo desarrollado para mi Trabajo Fin de Grado, centrado en un motor de decisión para configurar AutoGluon de forma automática mediante una interfaz en Streamlit.
 
 ## Requisitos
 - Python 3.11

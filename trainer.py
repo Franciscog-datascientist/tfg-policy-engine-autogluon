@@ -191,30 +191,3 @@ def train(
         "extra_metrics":  extra_metrics,
         "predictor":      predictor,
     }
-
-# Ejecución directa para prueba rápida
-if __name__ == "__main__":
-    from policy_engine import run
-
-    np.random.seed(42)
-
-    n = 200
-    df_example = pd.DataFrame({
-        "edad":       np.random.randint(18, 65, n),
-        "salario":    np.random.randint(20000, 80000, n),
-        "experiencia":np.random.randint(0, 30, n),
-        "ciudad":     np.random.choice(["Madrid", "Valencia", "Barcelona"], n),
-        "target":     np.random.choice([0, 1], n),
-    })
-
-    config = run(
-        source=df_example,
-        label="target",
-        priority="speed",
-        time_budget_level="low",
-        focus_minority_class="no",
-        deployment_needed="no",
-    )
-
-    results = train(df_example, config)
-    print("\nMétricas extra:", results["extra_metrics"])

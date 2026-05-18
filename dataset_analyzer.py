@@ -71,22 +71,3 @@ def analyze_dataset(source: pd.DataFrame | str) -> dict:
     }
  
     return dataset_meta
- 
- 
-# Uso de ejemplo
-if __name__ == "__main__":
-    # Ejemplo con DataFrame sintético
-    import numpy as np
- 
-    df_example = pd.DataFrame({
-        "edad": [25, 30, None, 45, 22],
-        "salario": [30000.0, 45000.0, 50000.0, None, 28000.0],
-        "ciudad": ["Madrid", "Valencia", "Madrid", None, "Sevilla"],
-        "activo": [True, False, True, True, False],
-        "target": [1, 0, 1, 0, 1],
-    })
- 
-    resultado = analyze_dataset(df_example)
-    print("=== dataset_meta ===")
-    for clave, valor in resultado.items():
-        print(f"  {clave}: {valor}")

@@ -90,7 +90,7 @@ def generate_report(
     prompt = f"""Eres un asistente de ciencia de datos que genera informes claros y profesionales en español.
 Escribe un informe conciso (máximo 250 palabras) explicando los resultados de un proceso de entrenamiento automático de modelos de machine learning.
 Usa un lenguaje claro, sin tecnicismos innecesarios. No uses listas de puntos, escribe en prosa.
-No inventes información — basa el informe únicamente en los datos que se te proporcionan.
+No inventes información, basa el informe únicamente en los datos que se te proporcionan.
 
 DATOS DEL DATASET:
 - Filas: {n_rows} | Columnas: {n_cols} | Valores nulos: {missing:.1f}%

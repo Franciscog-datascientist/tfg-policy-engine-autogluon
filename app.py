@@ -383,7 +383,7 @@ st.markdown(
 )
 st.divider()
 
-# PASO 0 — Subir el CSV
+# PASO 0: Subir el CSV
 
 if st.session_state.step == 0:
 
@@ -411,7 +411,7 @@ if st.session_state.step == 0:
             except Exception as e:
                 st.error(f"Error al leer el archivo: {e}")
 
-# PASO 1 — Mostrar resumen del dataset y elegir la columna objetivo
+# PASO 1: Mostrar resumen del dataset y elegir la columna objetivo
 
 elif st.session_state.step == 1:
 
@@ -481,7 +481,7 @@ elif st.session_state.step == 1:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-# PASO 2 — Mostrar análisis de la variable objetivo
+# PASO 2: Mostrar análisis de la variable objetivo
 
 elif st.session_state.step == 2:
 
@@ -563,7 +563,7 @@ elif st.session_state.step == 2:
             if st.button("Reiniciar", use_container_width=True):
                 reset()
 
-# PASO 3 — Preguntas guiadas al usuario
+# PASO 3: Preguntas guiadas al usuario
 
 elif st.session_state.step == 3:
 
@@ -722,7 +722,7 @@ elif st.session_state.step == 3:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-# PASO 4 — Ejecutar el policy engine y mostrar el resultado
+# PASO 4: Ejecutar el policy engine y mostrar el resultado
 
 elif st.session_state.step == 4:
 
@@ -867,7 +867,7 @@ elif st.session_state.step == 4:
         if st.button("Reiniciar", use_container_width=True):
             reset()
 
-# PASO 5 — Entrenar con AutoGluon y mostrar resultados
+# PASO 5: Entrenar con AutoGluon y mostrar resultados
 
 elif st.session_state.step == 5:
 

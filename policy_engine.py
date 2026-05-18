@@ -488,7 +488,7 @@ def update_execution_log_with_results(run_id: str, training_results: dict) -> bo
             _save_log(log)
             return True
 
-    return False  # run_id no encontrado en el log
+    return False  
 
 
 def _size_bucket(n_rows: int) -> str:
@@ -768,60 +768,3 @@ def run(
     )
 
     return config
-
-
-
-# Ejecución directa para pruebas rápidas
-
-if __name__ == "__main__":
-    import json
-    import numpy as np
-
-    # Dataset de ejemplo
-    df_example = pd.DataFrame({
-        "edad": [25, 30, None, 45, 22],
-        "salario": [30000.0, 45000.0, 50000.0, None, 28000.0],
-        "ciudad": ["Madrid", "Valencia", "Madrid", None, "Sevilla"],
-        "activo": [True, False, True, True, False],
-        "target": [1, 0, 1, 0, 1],
-    })
-
-    print("=" * 60)
-    print("POLICY ENGINE — Prueba con dataset de ejemplo")
-    print("=" * 60)
-
-    config = run(
-        source=df_example,
-        label="target",
-        priority="balanced",
-        time_budget_level="medium",
-        focus_minority_class="no",
-        deployment_needed="no",
-    )
-
-    print(json.dumps(config, indent=2, ensure_ascii=False))
-    print(f"\nrun_id: {config['run_id']}")
-
-    # Simular que el entrenamiento ha terminado
-    fake_results = {
-        "best_model": "WeightedEnsemble_L2",
-        "score": 0.82,
-        "eval_metric": "accuracy",
-        "training_time": 45.3,
-        "leaderboard_top5": [
-            {"model": "WeightedEnsemble_L2", "score_val": 0.81, "score_test": 0.82},
-            {"model": "LightGBM_BAG_L1",     "score_val": 0.79, "score_test": None},
-        ],
-    }
-
-    updated = update_execution_log_with_results(config["run_id"], fake_results)
-    print(f"\nResultados guardados en el log: {updated}")
-
-    # Consultar runs similares
-    similar = query_similar_runs(
-        problem_type=config["predictor_init"]["problem_type"],
-        n_rows=5,
-    )
-    print(f"\nRuns similares encontrados: {len(similar)}")
-    for r in similar:
-        print(f"  {r['timestamp'][:19]} | {r['best_model']} | score={r['score']}")

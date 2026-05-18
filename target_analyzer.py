@@ -148,28 +148,3 @@ def analyze_target(df: pd.DataFrame, label: str) -> dict:
         "imbalance_level": imbalance_level,
         "n_predictive_cols": n_predictive_cols,
     }
- 
-# Ejecución directa para pruebas rápidas
-if __name__ == "__main__":
-    import sys
- 
-    if len(sys.argv) < 3:
-        print("Uso: python target_analyzer.py <ruta_csv> <columna_objetivo>")
-        print("Ejemplo: python target_analyzer.py datos.csv target")
-        sys.exit(1)
- 
-    csv_path = sys.argv[1]
-    label_col = sys.argv[2]
- 
-    print(f"Cargando dataset: {csv_path}")
-    data = pd.read_csv(csv_path)
-    print(f"Shape: {data.shape}\n")
- 
-    result = analyze_target(data, label_col)
- 
-    print("=" * 50)
-    print("TARGET META")
-    print("=" * 50)
-    for key, value in result.items():
-        print(f"  {key}: {value}")
-    print("=" * 50)
